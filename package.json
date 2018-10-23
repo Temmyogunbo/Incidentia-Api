@@ -1,0 +1,52 @@
+{
+  "name": "incidentia",
+  "version": "1.0.0",
+  "description": "An incident reporting app",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf src/dist && babel src/ --out-dir src/dist/ --copy-files",
+    "build:dev": "nodemon --watch server --exec babel-node -- ./src/index.js",
+    "start:dev": "babel-node -- src/index.js",
+    "start": "node src/index.js",
+    "test": "jest --maxWorkers=2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/github.com/temmyogunbo.git"
+  },
+  "keywords": [
+    "incident",
+    "postmortem"
+  ],
+  "author": "Temmyogunbo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/github.com/temmyogunbo/issues"
+  },
+  "homepage": "https://github.com/github.com/temmyogunbo#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "dependencies": {
+    "dotenv": "^6.1.0",
+    "firebase": "^5.5.5",
+    "hapi": "^17.6.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "!src/dist"
+    ],
+    "collectCoverage": true,
+    "testEnvironment": "node",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(js)$",
+    "moduleFileExtensions": [
+      "js",
+      "json"
+    ]
+  }
+}

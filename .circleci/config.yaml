@@ -1,0 +1,40 @@
+version: 2
+jobs: 
+  working_directory: /incidentia
+  docker:
+    - image:circleci/node:8
+    environment:
+      NODE_ENV: test    
+    steps:
+      - checkout
+
+      - restore_cache:
+        key: yarn-v1-{{ checksum "yarn.lock"}}-{{arch}}
+
+      - run: yarn install
+
+      - save_cache:
+        name: Save Yarn Package Cache
+        key: yarn-packages-{{ .Branch }}-{{ checksum "yarn.lock" }}
+        paths:
+          - node_modules/
+      
+      - run:
+        name: jest tests
+        command: |
+        mkdir -p test-results/jest
+          yarn test
+          
+      - persist_to_workspace:
+          root: coverage
+          paths:
+            - lcov.info
+
+      - store_test_results:
+          path: test-output/
+
+      - store_artifacts:
+          path: coverage/
+
+      - store_artifacts:
+          path: /tmp/memory-usage.txt
