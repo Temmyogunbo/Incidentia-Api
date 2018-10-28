@@ -17,6 +17,11 @@ export const register = (plugin) => {
       method: 'GET',
       path: '/incidencias',
       handler: () => Incidencia.getIncidencias(),
+    },
+    {
+      method: 'GET',
+      path: '/',
+      handler: () => 'Welcome to your to incidence reporting tool',
     }
   ]);
 };
