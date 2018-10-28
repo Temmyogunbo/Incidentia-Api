@@ -34,4 +34,21 @@ export default class Incidencia {
       return error;
     }
   }
+
+  static async getIncidencias() {
+    try {
+      const snapshot = await db.once('value');
+      return Incidencia.mapIncidencia(snapshot.val());
+    } catch (error) {
+      return error;
+    }
+  }
+
+  static mapIncidencia(incidencias) {
+    return Object.keys(incidencias).map((key) => {
+      const value = incidencias[key];
+      const accum = { ...value, id: key };
+      return accum;
+    });
+  }
 }

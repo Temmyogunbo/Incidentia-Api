@@ -13,7 +13,13 @@ export const register = (plugin) => {
         },
       },
     },
+    {
+      method: 'GET',
+      path: '/incidencias',
+      handler: () => Incidencia.getIncidencias(),
+    }
   ]);
 };
 
 export const name = 'incidencia';
+export default register;

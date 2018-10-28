@@ -1,7 +1,6 @@
 import hapiBodyparser from 'hapi-bodyparser';
 import hapiPino from 'hapi-pino';
 import dotenv from 'dotenv';
-import { incidencia } from './routes/incidencia';
 
 dotenv.config();
 
