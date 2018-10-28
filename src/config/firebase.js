@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const config = {
-  productiont: {
+  production: {
     apiKey: process.env.APIKEY,
     authDomain: process.env.AUTHDOMAIN,
     databaseURL: process.env.DATABASEURL,
