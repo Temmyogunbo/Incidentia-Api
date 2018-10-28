@@ -8,8 +8,9 @@
     "build:dev": "cross-env NODE_ENV=development nodemon --watch server --exec babel-node -- ./src/server.js",
     "start:dev": "babel-node -- src/server.js",
     "start": "node src/index.js",
-    "test": "cross-env NODE_ENV=development lab -t 70",
-    "test-cov-html": "lab -r html -o coverage.html"
+    "test": "cross-env NODE_ENV=test lab -t 70",
+    "test-cov-html": "lab -r html -o coverage.html",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
