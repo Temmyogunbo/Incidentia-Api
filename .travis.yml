@@ -20,7 +20,7 @@ node_js:
 notifications:
   email: false
 services:
-  - firebase
+  #- firebase
 before_script:
   #- npm install -g codeclimate-test-reporter
  # - npm install -g coveralls
