@@ -8,9 +8,9 @@
     "build:dev": "cross-env NODE_ENV=development nodemon --watch server --exec babel-node -- ./src/server.js",
     "start:dev": "cross-env NODE_ENV=development babel-node --inspector -- src/server.js",
     "start": "cross-env NODE_ENV=production node src/dist/server.js",
-    "test": "npm run start:db:seed && cross-env NODE_ENV=test lab -t 70",
+    "test": "npm run drop:db && cross-env NODE_ENV=test lab -t 70",
     "test-cov-html": "lab -r html -o coverage.html",
-    "start:db:seed": "mongo incidencias-test src/seed.js",
+    "drop:db": "mongo incidencias-test src/dropDatabase.js",
     "heroku-postbuild": "npm run build"
   },
   "repository": {
