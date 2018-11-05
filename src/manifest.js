@@ -35,6 +35,12 @@ export const manifest = {
           prefix: '/api/v1',
         },
       },
+      {
+        plugin: './routes/users',
+        routes: {
+          prefix: '/api/v1',
+        },
+      }
     ],
     options: {
       once: true,
