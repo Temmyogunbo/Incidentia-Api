@@ -1,12 +1,12 @@
 import incidentiaSchema from '../schema/incidentiaSchema';
-import Incidencia from '../controllers/Incidentia';
+import IncidenciaController from '../controllers/IncidentiaController';
 
 export const register = (plugin) => {
   plugin.route([
     {
       method: 'POST',
       path: '/incidencias',
-      handler: (request, reply) => Incidencia.createIncidencia(request.payload),
+      handler: (request, h) => IncidenciaController.createIncidencia(request.payload),
       options: {
         validate: {
           payload: incidentiaSchema,
@@ -16,13 +16,13 @@ export const register = (plugin) => {
     {
       method: 'GET',
       path: '/incidencias',
-      handler: () => Incidencia.getIncidencias(),
+      handler: () => IncidenciaController.getIncidencias(),
     },
     {
       method: 'GET',
       path: '/',
       handler: () => 'Welcome to your to incidence reporting tool',
-    }
+    },
   ]);
 };
 
