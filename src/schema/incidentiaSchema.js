@@ -20,7 +20,6 @@ const incidentiaSchema = {
     .required(),
   solution: Joi.string().min(10),
   solved: Joi.boolean().required(),
-  date: Joi.date().timestamp().required()
 };
 
 export default incidentiaSchema;
