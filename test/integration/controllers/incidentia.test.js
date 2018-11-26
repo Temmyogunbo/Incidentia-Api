@@ -21,8 +21,8 @@ describe('incidencias', () => {
     token = payload.token;
   });
 
-  describe('/GET incidencias', () => {
-    it('should post incidencias', async () => {
+  describe('Incidencias', () => {
+    it('should /POST incidencias', async () => {
       payload = {
         incidenciaName: 'Test incidencias',
         reporter: 'emmanuel.ogunbo@andela.com',
@@ -50,7 +50,7 @@ describe('incidencias', () => {
       expect(responseData.cause).to.equal(payload.cause);
     });
 
-    it('should get incidencias', async () => {
+    it('should /GET incidencias', async () => {
       const options = {
         method: 'GET',
         url: '/api/v1/incidencias',
