@@ -25,7 +25,7 @@ export const init = async (start) => {
     if (!start) return server;
 
     await server.start();
-    process.stdout.write(`server running on port ${process.env.PORT}\n`);
+    process.stdout.write(`server running on port ${process.env.PORT}\n` || 3000);
   } catch (err) {
     throw err;
   }
